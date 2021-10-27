@@ -1,0 +1,35 @@
+{
+  "name": "game",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "handlebars": "^4.7.7",
+    "parcel-bundler": "^1.12.5",
+    "parcel-plugin-handlebars-precompile": "^1.0.2",
+    "sfx": "^0.1.1",
+    "sweetalert2": "^11.1.9"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.12.5",
+    "parcel-plugin-handlebars-precompile": "^1.0.2",
+    "handlebars": "^4.7.7"
+  },
+  "scripts": {
+    "dev": "parcel index.html",
+    "build": "parcel build index.html --public-url /game/",
+    "deploy": "gh-pages -d ./dist",
+    "predeploy": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/galinagumenyuk/game.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/galinagumenyuk/game/issues"
+  },
+  "homepage": "https://github.com/galinagumenyuk/game"
+}
