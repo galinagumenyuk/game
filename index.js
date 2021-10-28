@@ -9,84 +9,84 @@ import "animate.css";
 
 const keyLayout = [
   {
-    name: "q",
+    name: "Q",
   },
   {
-    name: "w",
+    name: "W",
   },
   {
-    name: "e",
+    name: "E",
   },
   {
-    name: "r",
+    name: "R",
   },
   {
-    name: "t",
+    name: "T",
   },
   {
-    name: "y",
+    name: "Y",
   },
   {
-    name: "u",
+    name: "U",
   },
   {
-    name: "i",
+    name: "I",
   },
   {
-    name: "o",
+    name: "O",
   },
   {
-    name: "p",
+    name: "P",
     newLine: true,
   },
   {
-    name: "a",
+    name: "A",
   },
   {
-    name: "s",
+    name: "S",
   },
   {
-    name: "d",
+    name: "D",
   },
   {
-    name: "f",
+    name: "F",
   },
   {
-    name: "g",
+    name: "G",
   },
   {
-    name: "h",
+    name: "H",
   },
   {
-    name: "j",
+    name: "J",
   },
   {
-    name: "k",
+    name: "K",
   },
   {
-    name: "l",
+    name: "L",
     newLine: true,
   },
   {
-    name: "z",
+    name: "Z",
   },
   {
-    name: "x",
+    name: "X",
   },
   {
-    name: "c",
+    name: "C",
   },
   {
-    name: "v",
+    name: "V",
   },
   {
-    name: "b",
+    name: "B",
   },
   {
-    name: "n",
+    name: "N",
   },
   {
-    name: "m",
+    name: "M",
   },
 ];
 
@@ -109,7 +109,9 @@ function makeSymbol() {
   const possible = "abcdefghijklmnopqrstuvwxyz";
 
   for (let i = 0; i < 1; i++)
-    text = possible.charAt(Math.floor(Math.random() * possible.length));
+    text = possible
+      .charAt(Math.floor(Math.random() * possible.length))
+      .toUpperCase();
   return text;
 }
 
