@@ -4,6 +4,8 @@ import Swal from "sweetalert2/dist/sweetalert2.js";
 import "sweetalert2/src/sweetalert2.scss";
 let success = new Audio(require("./sounds/success.mp3"));
 let fail = new Audio(require("./sounds/fail.mp3"));
+let close = new Audio(require("./sounds/close.mp3"));
+import "animate.css";
 
 const keyLayout = [
   {
@@ -93,6 +95,8 @@ let text = "";
 const keyboardMarkup = createKeyboardMarkup(keyLayout);
 const keyboardContainer = document.querySelector(".keyboard");
 const symbolHolder = document.querySelector(".symbol-holder");
+const btnClose = document.querySelector(".button-close");
+const wrapper = document.querySelector(".wrapper");
 keyboardContainer.insertAdjacentHTML("beforeend", keyboardMarkup);
 symbolHolder.insertAdjacentHTML("beforeend", makeSymbol());
 
@@ -113,10 +117,10 @@ function makeSymbol() {
 function updSymbolHolder() {
   symbolHolder.innerHTML = "";
   symbolHolder.insertAdjacentHTML("beforeend", makeSymbol());
-  symbolHolder.style.backgroundColor = `rgb(${getRandom(0, 255)}, ${getRandom(
-    0,
+  symbolHolder.style.backgroundColor = `rgb(${getRandom(200, 255)}, ${getRandom(
+    200,
     255
-  )}, ${getRandom(0, 255)})`;
+  )}, ${getRandom(200, 255)})`;
 
   function getRandom(min, max) {
     return Math.ceil(Math.random() * (max - min) + min);
@@ -142,4 +146,23 @@ function onClick(e) {
   } else {
     fail.play();
   }
+}
+// ---
+btnClose.addEventListener("click", onClose);
+function onClose() {
+  wrapper.classList.add("wrapper--hidden");
+
+  Swal.fire({
+    title: "Start game",
+    showClass: {
+      popup: "animate__animated animate__fadeInDown",
+    },
+    hideClass: {
+      popup: "animate__animated animate__fadeOutUp",
+    },
+    didClose: function () {
+      wrapper.classList.remove("wrapper--hidden");
+    },
+  });
+  close.play();
 }
